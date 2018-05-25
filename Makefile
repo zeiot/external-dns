@@ -35,7 +35,7 @@ endif
 all: help
 
 help:
-	@echo -e "$(OK_COLOR)==== $(APP) / $(IMAGE)  ====$(NO_COLOR)"
+	@echo -e "$(OK_COLOR)==== $(APP) / $(IMAGE) ====$(NO_COLOR)"
 	@echo -e "$(WARN_COLOR)- build version=xx   : Make the Docker image$(NO_COLOR)"
 	@echo -e "$(WARN_COLOR)- publish version=xx : Publish the image$(NO_COLOR)"
 	@echo -e "optional argument: arch=$(arch)"
