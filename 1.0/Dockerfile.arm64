@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# VERSION 0.8.1
+# VERSION 0.9.4
 # AUTHOR:         Nicolas Lamirault <nicolas.lamirault@gmail.com>
 # DESCRIPTION:    zeiot/rpi-ark
 
@@ -24,7 +24,7 @@ LABEL summary="Heptio Ark for ARM64" \
       url="https://github.com/zeiot/rpi-ark" \
       maintainer="Nicolas Lamirault <nicolas.lamirault@gmail.com>"
 
-ENV ARK_VERSION 0.8.1
+ENV ARK_VERSION 0.9.4
 
 RUN [ "cross-build-start" ]
 
