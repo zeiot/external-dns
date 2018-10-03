@@ -1,8 +1,8 @@
-# RPI Ark
+# RPI Kubernetes ExternalDNS
 
-* Master: [![pipeline status](https://gitlab.com/zeiot/rpi-ark/badges/master/pipeline.svg)](https://gitlab.com/zeiot/rpi-ark/commits/master)
+* Master: [![pipeline status](https://gitlab.com/zeiot/rpi-external-dns/badges/master/pipeline.svg)](https://gitlab.com/zeiot/rpi-external-dns/commits/master)
 
-Docker image of [Ark][] to use on a [Raspberry PI][].
+Docker image of [Kubernetes external-dns][] to use on a ARM(64) device.
 
 Configure binfmt-support on the Docker host (works locally or remotely, i.e: using boot2docker):
 
@@ -32,5 +32,4 @@ A [ChangeLog.md](ChangeLog.md) is available.
 Nicolas Lamirault <nicolas.lamirault@gmail.com>
 
 
-[Raspberry PI]: https://www.raspberrypi.org/
-[Ark]: https://github.com/heptio/ark
+[external-dns]: https://github.com/kubernetes-incubator/external-dns
