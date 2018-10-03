@@ -14,8 +14,7 @@ Then you can run an armhf image from your x86_64 Docker host :
 
 Or build :
 
-    $ make build version=1.0
-
+    $ make build version=1.0 arch=arm64
 
 ## License
 
