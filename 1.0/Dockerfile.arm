@@ -50,7 +50,7 @@ ENV EXTERNAL_DNS_VERSION 0.5.11
 
 RUN [ "cross-build-start" ]
 
-COPY --from=builder /go/src/github.com/kubernetes-incubator/external-dns/build/external-dns-amd64 /usr/bin/external-dns
+COPY --from=builder /go/src/github.com/kubernetes-incubator/external-dns/build/external-dns-arm /usr/bin/external-dns
 
 RUN [ "cross-build-end" ]
 
