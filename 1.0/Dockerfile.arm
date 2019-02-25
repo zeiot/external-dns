@@ -30,7 +30,7 @@ WORKDIR $GOPATH/src/github.com/kubernetes-incubator/
 RUN git clone --branch multiarch https://github.com/nlamirault/external-dns \
     && cd external-dns \
     && make dep \
-    && make build GOARCH=amd64
+    && make build GOARCH=arm
 
 RUN ls /go/src/github.com/kubernetes-incubator/external-dns/build/
 
@@ -46,7 +46,7 @@ LABEL summary="Kubernetes External DNS for ARM" \
       url="https://github.com/zeiot/external-dns" \
       maintainer="Nicolas Lamirault <nicolas.lamirault@gmail.com>"
 
-ENV EXTERNAL_DNS_VERSION 0.5.7
+ENV EXTERNAL_DNS_VERSION 0.5.11
 
 RUN [ "cross-build-start" ]
 

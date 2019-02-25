@@ -46,7 +46,7 @@ LABEL summary="Kubernetes External DNS for ARM" \
       url="https://github.com/zeiot/rpi-external-dns" \
       maintainer="Nicolas Lamirault <nicolas.lamirault@gmail.com>"
 
-ENV EXTERNAL_DNS_VERSION 0.5.7
+ENV EXTERNAL_DNS_VERSION 0.5.11
 
 RUN [ "cross-build-start" ]
 
