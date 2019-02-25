@@ -1,4 +1,4 @@
-# Copyright (C) 2018 Nicolas Lamirault <nicolas.lamirault@gmail.com>
+# Copyright (C) 2018-2019 Nicolas Lamirault <nicolas.lamirault@gmail.com>
 
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
 APP=zeiot
 
 NAMESPACE=$(APP)
-IMAGE=rpi-external-dns
+IMAGE=external-dns
 
 REGISTRY_IMAGE ?= $(NAMESPACE)/$(IMAGE)
 
