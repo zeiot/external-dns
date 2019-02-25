@@ -1,4 +1,4 @@
-# Copyright 2018 Nicolas Lamirault <nicolas.lamirault@gmail.com>
+# Copyright 2018-2019 Nicolas Lamirault <nicolas.lamirault@gmail.com>
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,13 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# VERSION 0.5.7
+# VERSION 0.5.11
 # AUTHOR:         Nicolas Lamirault <nicolas.lamirault@gmail.com>
-# DESCRIPTION:    zeiot/rpi-external-dns
+# DESCRIPTION:    zeiot/external-dns
 
 FROM golang:1.10 as builder
 
-ENV EXTERNAL_DNS_VERSION 0.5.7
+ENV EXTERNAL_DNS_VERSION 0.5.11
 
 ENV GOPATH=/go
 ENV GOOS=linux
@@ -36,13 +36,14 @@ RUN ls /go/src/github.com/kubernetes-incubator/external-dns/build/
 
 # ---
 
-
-FROM resin/armv7hf-debian:stretch
+FROM balenalib/armv7hf-alpine:3.9
+# FROM balenalib/armv7hf-debian:stretch
+# FROM resin/armv7hf-debian:stretch
 
 LABEL summary="Kubernetes External DNS for ARM" \
       description="Kubernetes External DNS for ARM devices" \
-      name="zeiot/rpi-externl-dns" \
-      url="https://github.com/zeiot/rpi-external-dns" \
+      name="zeiot/externl-dns" \
+      url="https://github.com/zeiot/external-dns" \
       maintainer="Nicolas Lamirault <nicolas.lamirault@gmail.com>"
 
 ENV EXTERNAL_DNS_VERSION 0.5.7
