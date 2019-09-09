@@ -44,7 +44,7 @@ help:
 .PHONY: build
 build:
 	@echo -e "$(OK_COLOR)[$(APP)] build $(REGISTRY_IMAGE):v$(VERSION)-$(arch)$(NO_COLOR)"
-	@$(DOCKER) build -t $(REGISTRY_IMAGE):v${VERSION}-$(arch) $(version) -f $(version)/Dockerfile.$(arch)
+	@$(DOCKER) build -t $(REGISTRY_IMAGE):v${VERSION}-$(arch).latest $(version) -f $(version)/Dockerfile.$(arch)
 
 .PHONY: run
 run:
@@ -58,4 +58,4 @@ login:
 .PHONY: publish-arm
 publish:
 	@echo -e "$(OK_COLOR)[$(APP)] Publish $(REGISTRY_IMAGE):v$(VERSION)-$(arch)$(NO_COLOR)"
-	@$(DOCKER) push $(REGISTRY_IMAGE):v$(VERSION)-$(arch)
+	@$(DOCKER) push $(REGISTRY_IMAGE):v$(VERSION)-$(arch).latest

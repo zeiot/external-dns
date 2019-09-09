@@ -12,27 +12,26 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# VERSION 0.5.11
+# VERSION 0.5.16
 # AUTHOR:         Nicolas Lamirault <nicolas.lamirault@gmail.com>
 # DESCRIPTION:    zeiot/external-dns
 
-FROM golang:1.10 as builder
+FROM golang:1.12.9 as builder
 
-ENV EXTERNAL_DNS_VERSION 0.5.11
+ENV EXTERNAL_DNS_VERSION 0.5.16
 
 ENV GOPATH=/go
 ENV GOOS=linux
 ENV GOARCH=arm
 ENV GOARM=7
 
-WORKDIR $GOPATH/src/github.com/kubernetes-incubator/
-# RUN git clone --branch v${EXTERNAL_DNS_VERSION} https://github.com/kubernetes-incubator/external-dns \
-RUN git clone --branch multiarch https://github.com/nlamirault/external-dns \
+RUN git clone --branch v${EXTERNAL_DNS_VERSION} https://github.com/kubernetes-incubator/external-dns \
     && cd external-dns \
-    && make dep \
+    && go mod vendor \
     && make build GOARCH=arm
 
-RUN ls /go/src/github.com/kubernetes-incubator/external-dns/build/
+# RUN pwd
+# RUN ls /go/external-dns/build/
 
 # ---
 
@@ -46,11 +45,11 @@ LABEL summary="Kubernetes External DNS for ARM" \
       url="https://github.com/zeiot/external-dns" \
       maintainer="Nicolas Lamirault <nicolas.lamirault@gmail.com>"
 
-ENV EXTERNAL_DNS_VERSION 0.5.11
+ENV EXTERNAL_DNS_VERSION 0.5.16
 
 RUN [ "cross-build-start" ]
 
-COPY --from=builder /go/src/github.com/kubernetes-incubator/external-dns/build/external-dns-arm /usr/bin/external-dns
+COPY --from=builder /go/external-dns/build/external-dns /usr/bin/external-dns
 
 RUN [ "cross-build-end" ]
 

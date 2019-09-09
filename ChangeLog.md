@@ -1,7 +1,6 @@
-RPI External DNS ChangeLog
-=================================
+# External DNS ChangeLog
 
-# Version 1.0.0 (xxxxxxxx)
+## Version 0.1.0 (09/09/2019)
 
 - Support for multi arch ARM and ARM64
-- Use External DNS 0.5.7
+- Use release v0.5.16
